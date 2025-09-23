@@ -5,7 +5,8 @@ This repository contains the computational code and models for the manuscript ti
 ## Repository Contents
 
 * **/Code**: This directory contains the models used for the analysis.
-    * **qgis\_graphical\_model\_final.model3**: The QGIS Graphical Modeler file that automates the entire geospatial processing workflow, from raw inputs to the final Heat Risk Index (HRI).
+    * **qgis\_graphical\_model\_final.model3**: The QGIS Graphical Modeler file that automates the entire geospatial processing workflow.
+    * **fuzzy\_ahp\_weights.gms**: The GAMS (General Algebraic Modeling System) code that implements the Fuzzy AHP method to calculate the indicator weights.
 
 ## Data Availability
 
@@ -17,21 +18,20 @@ All raw input data (boundaries, population) and final processed datasets (annual
 
 ### Raw Landsat 8 Satellite Imagery
 
-The raw Landsat 8 Level-2 imagery is not included in the Zenodo archive due to its large size. This data is freely available from the USGS.
-
-To acquire the raw satellite data:
-1.  Go to the USGS Earth Explorer portal: https://earthexplorer.usgs.gov/
-2.  Search for the Landsat 8 Collection 2 Level-2 scenes corresponding to the acquisition dates listed in Table 4 of the manuscript.
+The raw Landsat 8 Level-2 imagery is not included in the Zenodo archive due to its large size. This data is freely available from the USGS Earth Explorer portal: https://earthexplorer.usgs.gov/. Please refer to Table 4 in the manuscript for the specific acquisition dates.
 
 ## How to Reproduce the Analysis
 
-1.  **Download Data**:
-    * Download the Data archive from the Zenodo link provided above.
-    * Download the raw Landsat 8 scenes from USGS Earth Explorer.
-2.  **Set up QGIS**:
-    * Ensure you have a working installation of QGIS (version 3.16 or later is recommended).
-3.  **Import the Model**:
-    * Open the QGIS Graphical Modeler (Processing > Graphical Modeler) and import the `qgis_graphical_model_final.model3` file from this repository.
-4.  **Run the Model**:
-    * Execute the model, providing the paths to the downloaded raw data when prompted by the model interface.
-    * The model will automatically generate all intermediate and final raster files.
+The analysis consists of two main parts: (1) calculating the indicator weights using GAMS, and (2) generating the HRI maps using QGIS.
+
+### 1. Indicator Weight Calculation (GAMS)
+
+* **Prerequisites**: A working installation of GAMS.
+* **Execution**: Run the `fuzzy_ahp_weights.gms` file from the `/Code` directory using GAMS. This will replicate the weight calculation and consistency analysis presented in the manuscript.
+
+### 2. HRI Map Generation (QGIS)
+
+1.  **Download Data**: Download the necessary data archives from the Zenodo link provided above and the raw Landsat 8 scenes from USGS Earth Explorer.
+2.  **Set up QGIS**: Ensure you have a working installation of QGIS (version 3.16 or later is recommended).
+3.  **Import the Model**: Open the QGIS Graphical Modeler (Processing > Graphical Modeler) and import the `qgis_graphical_model_final.model3` file.
+4.  **Run the Model**: Execute the model, providing the paths to the downloaded raw data when prompted. The model will automatically generate all required raster files.
