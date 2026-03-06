@@ -1,0 +1,16 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# Data
+*.tif
+*.tiff
+*.shp
+*.shx
+*.dbf
+*.prj

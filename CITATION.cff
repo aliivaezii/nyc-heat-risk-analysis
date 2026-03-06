@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "Urban Heat Risk Mapping in NYC Using GIS and Fuzzy AHP"
+type: software
+authors:
+  - family-names: "Vaezi"
+    given-names: "Ali"
+    orcid: "https://orcid.org/0009-0003-7400-8688"
+repository-code: "https://github.com/aliivaezii/nyc-heat-risk-analysis"
+license: MIT
+keywords:
+  - urban-heat-island
+  - gis
+  - fuzzy-ahp
+  - risk-mapping
+  - remote-sensing
+  - landsat
+  - qgis
+  - gams
+  - climate-analysis
